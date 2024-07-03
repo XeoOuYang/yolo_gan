@@ -1,0 +1,12 @@
+/results/
+/runs/
+/out/
+/datasets/
+/GANs/MNIST/
+/GANs/runs/
+/GANs/outs/
+/.idea/
+/__pycache__/
+**/__pycache__/
+/models/*.pt
+/*.pt
