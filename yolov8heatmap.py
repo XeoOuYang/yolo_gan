@@ -233,7 +233,22 @@ def get_params():
     }
     return params
 
+def get_run_params():
+    params = {
+        'weight': 'runs/detect/train/weights/best.pt',  # 现在只需要指定权重即可,不需要指定cfg
+        'device': 'cuda:0',
+        'method': 'HiResCAM',  # GradCAMPlusPlus, GradCAM, XGradCAM, EigenCAM, HiResCAM, LayerCAM, RandomCAM, EigenGradCAM
+        'layer': [9, 12, 15, 18, 21],
+        'backward_type': 'class',  # class, box, all
+        'conf_threshold': 0.2,  # 0.2
+        'ratio': 0.02,  # 0.02-0.1
+        'show_box': False,
+        'renormalize': False    # 区域突显
+    }
+    return params
+
 
 if __name__ == '__main__':
-    heatmap = YoloV8Heatmap(**get_params())
+    # heatmap = YoloV8Heatmap(**get_params())
+    heatmap = YoloV8Heatmap(**get_run_params())
     heatmap('resource/B0104.jpg', 'results')

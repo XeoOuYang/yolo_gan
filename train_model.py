@@ -113,12 +113,12 @@ if __name__ == '__main__':
     data_set = os.path.join(data_dir, 'data.yaml')
     # 通过检查
     if all(check_result):
-        # model_path = os.path.join(cwd, "models", "yolov8n.yaml")
+        model_path = os.path.join(cwd, "models", "yolov8n.yaml")
         # model_path = os.path.join(cwd, "models", "yolov8.C3RFEM.yaml")
         # model_path = os.path.join(cwd, "models", "yolov8.SEA.yaml")
         # model_path = os.path.join(cwd, "models", "yolov8.CBAM.yaml")
         # model_path = os.path.join(cwd, "models", "yolov8.p4.yaml")
-        model_path = os.path.join(cwd, "models", "yolov8m.gold.yaml")
+        # model_path = os.path.join(cwd, "models", "yolov8m.gold.yaml")
         # model_path = os.path.join(cwd, "models", "yolov8.shuffle.yaml")
         model, result = train_mode(model_path, data_set, 100)
         # 测试验证model
